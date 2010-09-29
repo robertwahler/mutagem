@@ -1,11 +1,7 @@
-BasicGem
+Mutagem
 ========
 
-An opinionated basic RubyGem structure. BasicGem provides no stand-alone 
-functionality.  Its purpose is to provide a repository for jump-starting 
-and maintaining a RubyGem.
-
-See [CLONING](CLONING.markdown) for more info.
+File based mutexes and IO task management for CLI applications.
 
 Copyright
 ---------
