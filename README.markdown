@@ -1,7 +1,7 @@
 Mutagem
 ========
 
-File based mutexes and IO task management for CLI applications.
+File based mutexes and IO task management
 
 Copyright
 ---------

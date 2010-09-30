@@ -1,4 +1,5 @@
 TODO
 ====
 
-* This is a placeholder file.  See [CLONING.markdown](CLONING.markdown)
+* refactor mutex to let the lockfile remove both the lock and the file
+* refactor lockfile to change "lock" behavior if no block given and add an "unlock" method

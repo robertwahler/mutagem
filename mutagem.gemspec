@@ -5,11 +5,11 @@ Gem::Specification.new do |s|
   s.name        = "mutagem"
   s.version     = Mutagem::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = []
-  s.email       = []
+  s.authors     = ["Robert Wahler"]
+  s.email       = ["robert@gearheadforhire.com"]
   s.homepage    = "http://rubygems.org/gems/mutagem"
-  s.summary     = "TODO: Write a gem summary"
-  s.description = "TODO: Write a gem description"
+  s.summary     = "File based mutexes and a simple external process management wrapper"
+  s.description = "The Mutagem library provides file based mutexes for recursion protection and threading of external processes with support for output and exit status capturing."
 
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "mutagem"

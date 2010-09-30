@@ -5,9 +5,8 @@ module Mutagem
   #    require 'mutagem'
   #
   #    mutext = Mutagem::Mutex.new
-  #    # this block is protected
   #    mutext.execute do
-  #      puts "long running process here"
+  #      puts "this block is protected from recursion"
   #    end
   #
   class Mutex < Lockfile
