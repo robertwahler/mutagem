@@ -25,15 +25,22 @@ describe Mutagem::Mutex do
       Mutagem::Mutex.new.execute do
         File.should be_file('mutagem.lck')
 
-        mutext = Mutagem::Mutex.new
-        result = mutext.execute do
+        mutex = Mutagem::Mutex.new
+        result = mutex.execute do
           # This block is protected, should not be here
           true.should be(false)
         end
         result.should be_false
-        mutext.should be_locked
+        mutex.should be_locked
       end
       File.should_not be_file('mutagem.lck')
+    end
+  end
+
+  it "should raise ArgumentError unless a block is given" do
+    in_current_dir do
+      mutex = Mutagem::Mutex.new
+      lambda {result = mutex.execute}.should raise_error(ArgumentError, 'missing block')
     end
   end
 

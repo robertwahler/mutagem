@@ -1,33 +1,44 @@
 module Mutagem
 
-  # Typical usage:
-  #
-  #    require 'mutagem'
-  #
-  #    mutext = Mutagem::Mutex.new
-  #    mutext.execute do
-  #      puts "this block is protected from recursion"
-  #    end
-  #
+  # File based mutex
   class Mutex < Lockfile
 
+    # Creates a new Mutex
+    #
+    # @param [String] lockfile filename
     def initialize(lockfile='mutagem.lck')
       super lockfile
     end
 
-    def execute
+    # Protect a block 
+    #
+    # @example
+    #
+    #    require 'mutagem'
+    #
+    #    mutex = Mutagem::Mutex.new("my_process_name.lck")
+    #    mutex.execute do
+    #      puts "this block is protected from recursion"
+    #    end
+    #
+    # @param block the block of code to protect with the mutex
+    # @return [Boolean] 0 if lock sucessful, otherwise false
+    def execute(&block)
       result = false
+      raise ArgumentError, "missing block" unless block_given?
+
       begin
-        open(@lockfile, 'w') do |f|
+        open(lockfile, 'w') do |f|
           # exclusive non-blocking lock
           result = lock(f, File::LOCK_EX | File::LOCK_NB) do |f|
-            yield if block_given?
+            yield
           end
         end
       ensure
         # clean up but only if we have a positive result meaning we wrote the lockfile
-        FileUtils.rm(@lockfile) if (result && File.exists?(@lockfile))
+        FileUtils.rm(lockfile) if (result && File.exists?(lockfile))
       end
+
       result
     end
   end

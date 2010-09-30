@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Robert Wahler"]
   s.email       = ["robert@gearheadforhire.com"]
   s.homepage    = "http://rubygems.org/gems/mutagem"
-  s.summary     = "File based mutexes and a simple external process management wrapper"
+  s.summary     = "File based mutexes with a simple external process management wrapper"
   s.description = "The Mutagem library provides file based mutexes for recursion protection and threading of external processes with support for output and exit status capturing."
 
   s.required_rubygems_version = ">= 1.3.6"

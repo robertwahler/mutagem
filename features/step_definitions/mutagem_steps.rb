@@ -8,6 +8,9 @@ Given /^a Ruby source file that uses mutagem named "([^\"]*)"$/ do |filename|
 
       require 'mutagem'
 
+      # make sure we are working with the expected gem
+      raise "unexpected mutagem version" unless Mutagem::VERSION == '#{Mutagem::VERSION}'
+
       mutext = Mutagem::Mutex.new
       mutext.execute do
         puts "hello world"
