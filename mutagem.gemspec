@@ -36,7 +36,6 @@ Gem::Specification.new do |s|
                        ]
   s.extra_rdoc_files = [
                          'LICENSE',
-                         'CLONING.markdown',
                          'HISTORY.markdown'
                        ]
 end
