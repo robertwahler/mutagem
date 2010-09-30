@@ -1,7 +1,10 @@
 Mutagem
 ========
 
-File based mutexes and IO task management
+File based mutexes with a simple external process management wrapper
+
+The Mutagem library provides file based mutexes for recursion protection and 
+threading of external processes with support for output and exit status capturing
 
 Copyright
 ---------
