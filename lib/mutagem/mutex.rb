@@ -14,6 +14,7 @@ module Mutagem
     #
     # @example
     #
+    #    require 'rubygems'
     #    require 'mutagem'
     #
     #    mutex = Mutagem::Mutex.new("my_process_name.lck")
