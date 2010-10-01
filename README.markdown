@@ -11,7 +11,8 @@ threading of external processes with support for output and exit status capturin
 
 A test suite is provided for both unit testing with [RSpec](http://github.com/dchelimsky/rspec) 
 and functional testing with [Cucumber](http://github.com/aslakhellesoy/cucumber).  The code is 
-documented using [YARD](http://github.com/lsegal/yard).
+documented using [YARD](http://github.com/lsegal/yard).  Mutagem development was jump-started by 
+cloning [BasicGem](http://github.com/robertwahler/basic_gem).
 
 
 Example Usage
