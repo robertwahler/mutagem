@@ -18,7 +18,7 @@ module Mutagem
     attr_reader :cmd
     attr_accessor :thread
 
-    # create a new Task
+    # Create a new Task
     #
     # @param [String] cmd the cmd to execute
     def initialize(cmd)

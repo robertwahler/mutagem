@@ -9,7 +9,10 @@ Gem::Specification.new do |s|
   s.email       = ["robert@gearheadforhire.com"]
   s.homepage    = "http://rubygems.org/gems/mutagem"
   s.summary     = "File based mutexes with a simple external process management wrapper"
-  s.description = "The Mutagem library provides file based mutexes for recursion protection and threading of external processes with support for output and exit status capturing."
+  s.description = "The Mutagem library provides file based mutexes for recursion protection and 
+                   classes for threading of external processes with support for output and 
+                   exit status capturing. A test suite is provided for both unit and functional testing.
+                   The code is documented using YARD."
 
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "mutagem"
@@ -33,9 +36,5 @@ Gem::Specification.new do |s|
                          '--main', 'README.markdown', 
                          '--line-numbers',
                          '--inline-source' 
-                       ]
-  s.extra_rdoc_files = [
-                         'LICENSE',
-                         'HISTORY.markdown'
                        ]
 end
