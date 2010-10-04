@@ -28,7 +28,7 @@ def all_feature_files
 end
 
 def all_spec_files
-  files = Dir['spec/basic_gem/*.rb']
+  files = Dir['spec/**/*_spec\.rb']
 end
 
 def run(cmd)
@@ -103,7 +103,7 @@ $last_feature = nil
 prompt
 
 # --------------------------------------------------
-# Watchr Rules
+# Watchr Ruls
 # --------------------------------------------------
 watch( '^features/(.*)\.feature'   )   { run_default_cucumber }
 
@@ -114,7 +114,8 @@ watch( '^features/step_definitions/(.*)\.rb' )   { run_default_cucumber }
 watch( '^features/support/(.*)\.rb' )   { run_default_cucumber }
 
 watch( '^spec/(.*)_spec\.rb'   )   { |m| run_spec(m[0]) }
-watch( '^lib/basic_gem.rb'   )   { run_default_spec }
+watch( '^lib/mutagem/lockfile.rb'   )   { run_default_spec }
+watch( '^lib/mutagem/mutex.rb'   )   { run_default_spec }
 
 # --------------------------------------------------
 # Signal Handling
