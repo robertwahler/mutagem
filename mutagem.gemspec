@@ -1,9 +1,11 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path("../lib/mutagem/version", __FILE__)
+#
+#
+require File.expand_path("../lib/mutagem", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "mutagem"
-  s.version     = Mutagem::VERSION
+  s.version     = Mutagem::version
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Robert Wahler"]
   s.email       = ["robert@gearheadforhire.com"]

@@ -9,7 +9,7 @@ Given /^a Ruby source file that uses Mutagem::Mutex named "([^\"]*)"$/ do |filen
       require 'mutagem'
 
       # make sure we are working with the expected gem
-      raise "unexpected mutagem version" unless Mutagem::VERSION == '#{Mutagem::VERSION}'
+      raise "unexpected mutagem version" unless Mutagem::version == '#{Mutagem::version}'
 
       mutext = Mutagem::Mutex.new
       mutext.execute do
@@ -31,7 +31,7 @@ Given /^a Ruby source file that uses Mutagem::Task named "([^\"]*)"$/ do |filena
       require 'mutagem'
 
       # make sure we are working with the expected gem
-      raise "unexpected mutagem version" unless Mutagem::VERSION == '#{Mutagem::VERSION}'
+      raise "unexpected mutagem version" unless Mutagem::version == '#{Mutagem::version}'
 
       cmd = %q[ruby -e 'puts "hello world"; exit 2']
       task = Mutagem::Task.new(cmd)
