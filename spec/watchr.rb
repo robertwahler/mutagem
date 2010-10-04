@@ -103,7 +103,7 @@ $last_feature = nil
 prompt
 
 # --------------------------------------------------
-# Watchr Ruls
+# Watchr Rules
 # --------------------------------------------------
 watch( '^features/(.*)\.feature'   )   { run_default_cucumber }
 
@@ -114,6 +114,8 @@ watch( '^features/step_definitions/(.*)\.rb' )   { run_default_cucumber }
 watch( '^features/support/(.*)\.rb' )   { run_default_cucumber }
 
 watch( '^spec/(.*)_spec\.rb'   )   { |m| run_spec(m[0]) }
+# specify just the lib files that have specs
+# TODO: This can be determined automatically from the spec file naming convention
 watch( '^lib/mutagem/lockfile.rb'   )   { run_default_spec }
 watch( '^lib/mutagem/mutex.rb'   )   { run_default_spec }
 
