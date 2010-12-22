@@ -1,7 +1,7 @@
 require 'thread'
 
 module Mutagem
-  
+
   #  A simple external process management wrapper
   #
   # @example
@@ -29,13 +29,14 @@ module Mutagem
         begin
           @output = pipe.readlines
           pipe.close
+          $stdout.sync = true
           @exitstatus = $?.exitstatus
         rescue => e
           @exception = e
         end
-      end 
+      end
     end
-     
+
     # @return [Array] array of strings from the subprocess output
     def output
       @output
@@ -46,7 +47,7 @@ module Mutagem
       @exitstatus
     end
 
-    # @return subprocess pid 
+    # @return subprocess pid
     def pid
       @pid
     end
@@ -55,7 +56,7 @@ module Mutagem
     def exception
       @exception
     end
-    
+
     # join the task's thead and wait for it to finish
     def join
       thread.join
