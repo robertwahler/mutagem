@@ -1,12 +1,12 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Mutagem::Mutex do
-  
+
   before(:each) do
     # remove tmp/aruba
     FileUtils.rm_rf(current_dir)
   end
-  
+
   it "should create a mutex, yield, and clean up" do
     in_current_dir do
       mutex = Mutagem::Mutex.new

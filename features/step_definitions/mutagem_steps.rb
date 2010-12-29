@@ -38,7 +38,7 @@ Given /^a Ruby source file that uses Mutagem::Task named "([^\"]*)"$/ do |filena
       task.join
 
       puts task.output
-      exit task.exitstatus 
+      exit task.exitstatus
       """
   }
 end

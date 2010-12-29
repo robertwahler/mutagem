@@ -31,8 +31,8 @@ Gem::Specification.new do |s|
   s.email       = ["robert@gearheadforhire.com"]
   s.homepage    = "http://rubygems.org/gems/mutagem"
   s.summary     = "File based mutexes with a simple external process management wrapper"
-  s.description = "The Mutagem library provides file based mutexes for recursion protection and 
-                   classes for threading of external processes with support for output and 
+  s.description = "The Mutagem library provides file based mutexes for recursion protection and
+                   classes for threading of external processes with support for output and
                    exit status capturing. A test suite is provided for both unit and functional testing.
                    The code is documented using YARD."
 
@@ -58,9 +58,9 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
 
   s.has_rdoc = 'yard'
-  s.rdoc_options     = [ 
-                         '--title', 'Mutagem Documentation', 
-                         '--main', 'README.markdown', 
+  s.rdoc_options     = [
+                         '--title', 'Mutagem Documentation',
+                         '--main', 'README.markdown',
                          '--line-numbers',
                          '--inline-source'
                        ]
