@@ -8,11 +8,7 @@ require 'mutagem'
 require 'spec'
 require 'spec/autorun'
 require 'aruba/api'
-
-# aruba helper, returns full path to files in the aruba tmp folder
-def fullpath(filename)
-  File.expand_path(File.join(current_dir, filename))
-end
+require 'aruba_helper'
 
 Spec::Runner.configure do |config|
    config.include Aruba::Api
