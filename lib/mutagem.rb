@@ -20,7 +20,7 @@ module Mutagem
   end
 
   # Platform constants
-  unless defined?(BasicGem::WINDOWS)
+  unless defined?(Mutagem::WINDOWS)
     WINDOWS = Config::CONFIG['host_os'] =~ /mswin|mingw/i
     CYGWIN = Config::CONFIG['host_os'] =~ /cygwin/i
   end

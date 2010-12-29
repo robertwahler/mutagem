@@ -6,12 +6,12 @@ A Ruby gem for file based mutexes with a simple external process management wrap
 
 Overview
 --------
-The Mutagem library provides file based mutexes for recursion protection and wrapper classes for 
-threading of external processes with support for output and exit status capturing. 
+The Mutagem library provides file based mutexes for recursion protection and wrapper classes for
+external processes with support for output and exit status capturing.
 
-A test suite is provided for both unit testing with [RSpec](http://github.com/dchelimsky/rspec) 
-and functional testing with [Cucumber](http://github.com/aslakhellesoy/cucumber).  The code is 
-documented using [YARD](http://github.com/lsegal/yard).  Mutagem development was jump-started by 
+A test suite is provided for both unit testing with [RSpec](http://github.com/dchelimsky/rspec)
+and functional testing with [Cucumber](http://github.com/aslakhellesoy/cucumber).  The code is
+documented using [YARD](http://github.com/lsegal/yard).  Mutagem development was jump-started by
 cloning [BasicGem](http://github.com/robertwahler/basic_gem).
 
 
@@ -21,13 +21,13 @@ The following Ruby code is used to run a word by word diff on two folders of com
 Each folder contains before and after CSV dumps from a SQL database.  The CSV files have the same name
 in each of the two folders.
 
-Mutagem is providing recursion protection.  The recursion protection is very useful if the script is 
-run in an automated environment (ex. cron).  Mutagem is also capturing output and exit status for the 
-diff processes allowing customized output.  
+Mutagem is providing recursion protection.  The recursion protection is very useful if the script is
+run in an automated environment (ex. cron).  Mutagem is also capturing output and exit status for the
+diff processes allowing customized output.
 
-Standard diff is quick but it can't give you a word by word diff of CSV data.  Word by word 
-colorized diffing with support for custom delimiters is provided 
-by [dwdiff](http://os.ghalkes.nl/dwdiff.html). 
+Standard diff is quick but it can't give you a word by word diff of CSV data.  Word by word
+colorized diffing with support for custom delimiters is provided
+by [dwdiff](http://os.ghalkes.nl/dwdiff.html).
 
 
     #!/usr/bin/env ruby
@@ -49,23 +49,23 @@ by [dwdiff](http://os.ghalkes.nl/dwdiff.html).
       before_files.each do |bf|
 
         af = 'test/dump/after/' + Pathname.new(bf).basename.to_s
-        
+
         # quick diff
         cmd = "diff #{bf} #{af}"
         task = Mutagem::Task.new(cmd)
-        task.join
+        task.run
 
         if (task.exitstatus == 0)
           # no changes, show a "still working" indicator
           print ".".green
         else
-          # we have changes, slow diff, word based and CSV (comma) sensitive 
+          # we have changes, slow diff, word based and CSV (comma) sensitive
           print "D".red
           puts "\n#{af}"
-         
+
           cmd = "dwdiff --color --context=0 --delimiters=, #{bf} #{af}"
           task = Mutagem::Task.new(cmd)
-          task.join
+          task.run
 
           puts task.output
         end
@@ -93,7 +93,7 @@ Development
 -----------
 
 Mutagem uses [Bundler](http://github.com/carlhuda/bundler) to manage dependencies, the gemspec
-file is maintained by hand. 
+file is maintained by hand.
 
     git clone http://github.com/robertwahler/mutagem
     cd mutagem
