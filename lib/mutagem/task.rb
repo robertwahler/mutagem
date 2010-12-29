@@ -16,25 +16,13 @@ module Mutagem
   class Task
     # @return [String] command to run
     attr_reader :cmd
-    attr_accessor :thread
 
     # Create a new Task
     #
     # @param [String] cmd the cmd to execute
     def initialize(cmd)
+      $stdout.sync = true
       @cmd = cmd
-      @thread = Thread.new do
-        pipe = IO.popen(cmd + " 2>&1")
-        @pid = pipe.pid
-        begin
-          @output = pipe.readlines
-          pipe.close
-          $stdout.sync = true
-          @exitstatus = $?.exitstatus
-        rescue => e
-          @exception = e
-        end
-      end
     end
 
     # @return [Array] array of strings from the subprocess output
@@ -57,10 +45,19 @@ module Mutagem
       @exception
     end
 
-    # join the task's thead and wait for it to finish
-    def join
-      thread.join
+    # run the cmd
+    def run
+      pipe = IO.popen(@cmd + " 2>&1")
+      @pid = pipe.pid
+      begin
+        @output = pipe.readlines
+        pipe.close
+        @exitstatus = $?.exitstatus
+      rescue => e
+        @exception = e
+      end
     end
+    alias :join :run
 
   end
 
