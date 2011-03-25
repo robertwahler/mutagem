@@ -1,3 +1,5 @@
+require 'fileutils'
+
 module Mutagem
 
   # File based mutex
@@ -10,7 +12,7 @@ module Mutagem
       super lockfile
     end
 
-    # Protect a block 
+    # Protect a block
     #
     # @example
     #
