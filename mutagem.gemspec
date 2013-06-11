@@ -41,16 +41,13 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "bundler", ">= 1.0.7"
   s.add_development_dependency "rspec", "= 1.3.1"
-  s.add_development_dependency "cucumber", ">= 0.9.4"
-  s.add_development_dependency "aruba", ">= 0.2.2"
+  s.add_development_dependency "cucumber", "~> 1.0"
+  s.add_development_dependency "aruba", "= 0.2.2"
   s.add_development_dependency "rake", ">= 0.8.7"
-  s.add_development_dependency "yard", ">= 0.6.2"
 
-  # Specify a markdown gem for rake doc:generate
-  #
-  # Without the development dependency, running yard rake
-  # tasks will fail.  Kramdown chosen to provide a pure Ruby solution.
-  s.add_development_dependency "kramdown", ">= 0.12.0"
+  # doc generation
+  s.add_development_dependency "yard", ">= 0.7.2"
+  s.add_development_dependency "redcarpet", ">= 1.17.2"
 
   s.files        = @gemfiles.split("\n")
   s.executables  = @gemfiles.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact
