@@ -1,4 +1,3 @@
-@announce
 Feature: Simple process management wrapper
 
   Manage subprocess tasks in a separate thread

@@ -1,4 +1,3 @@
-@announce
 Feature: File based mutexes
 
   Automated processes need locking to prevent recursion on long running commands
