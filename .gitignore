@@ -1,9 +1,10 @@
+.DS_Store
+Gemfile.lock
 pkg/*
 *.gem
 .bundle
 coverage
 rdoc
-.yardoc
 rerun.txt
 tags
 tmp/fixtures

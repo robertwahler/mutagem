@@ -39,18 +39,17 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "mutagem"
 
-  s.add_development_dependency "bundler", ">= 1.0.7"
-  s.add_development_dependency "rspec", "= 1.3.1"
-  s.add_development_dependency "cucumber", "~> 1.0"
+  s.add_development_dependency "bundler", ">= 1.0.14"
+  s.add_development_dependency "rspec", "~> 1.3.1"
   s.add_development_dependency "aruba", "= 0.2.2"
-  s.add_development_dependency "rake", ">= 0.8.7"
+  s.add_development_dependency "rake", "~> 0.9.2"
+  s.add_development_dependency "cucumber", "~> 1.3.2"
 
   s.files        = @gemfiles.split("\n")
   s.executables  = @gemfiles.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact
 
   s.require_path = 'lib'
 
-  s.has_rdoc = 'yard'
   s.rdoc_options     = [
                          '--title', 'Mutagem Documentation',
                          '--main', 'README.markdown',

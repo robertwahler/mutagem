@@ -2,7 +2,6 @@
 .gitattributes
 .gitignore
 Gemfile
-Gemfile.lock
 HISTORY.markdown
 LICENSE
 README.markdown
