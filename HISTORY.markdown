@@ -6,6 +6,10 @@ Most recent changes are at the top
 Changes
 -------
 
+### 0.2.3 - 12/21/2017 ###
+
+* Update and remove dependencies with known security issues
+
 ### 0.2.2 - 06/11/2013 ###
 
 * Use RbConfig instead of Config for Ruby 1.9

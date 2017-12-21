@@ -1,14 +1,12 @@
 .gemfiles
 .gitattributes
 .gitignore
-.yardopts
 Gemfile
 Gemfile.lock
 HISTORY.markdown
 LICENSE
 README.markdown
 Rakefile
-TODO.markdown
 VERSION
 config/cucumber.yml
 features/mutex.feature

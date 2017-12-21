@@ -9,10 +9,10 @@ Overview
 The Mutagem library provides file based mutexes for recursion protection and wrapper classes for
 external processes with support for output and exit status capturing.
 
-A test suite is provided for both unit testing with [RSpec](http://github.com/dchelimsky/rspec)
-and functional testing with [Cucumber](http://github.com/aslakhellesoy/cucumber).  The code is
-documented using [YARD](http://github.com/lsegal/yard).  Mutagem development was jump-started by
-cloning [BasicGem](http://github.com/robertwahler/basic_gem).
+A test suite is provided for both unit testing with
+[RSpec](http://github.com/dchelimsky/rspec) and functional testing with
+[Cucumber](http://github.com/aslakhellesoy/cucumber). Mutagem development was
+jump-started by cloning [BasicGem](http://github.com/robertwahler/basic_gem).
 
 
 Example Usage
@@ -92,6 +92,8 @@ Mutagem is avaliable on [RubyGems.org](http://rubygems.org/gems/mutagem)
 Development
 -----------
 
+Development dependencies require Ruby 1.9.3
+
 Mutagem uses [Bundler](http://github.com/carlhuda/bundler) to manage dependencies, the gemspec
 file is maintained by hand.
 
@@ -105,8 +107,6 @@ Use bundle to install development dependencies
 rake -T
 
     rake build         # Build mutagem-0.1.2.gem into the pkg directory
-    rake doc:clean     # Remove generated documenation
-    rake doc:generate  # Generate YARD Documentation
     rake features      # Run Cucumber features
     rake install       # Build and install mutagem-0.1.2.gem into system gems
     rake release       # Create tag v0.1.2 and build and push mutagem-0.1.2.gem to Rubygems
@@ -117,4 +117,4 @@ rake -T
 Copyright
 ---------
 
-Copyright (c) 2010 GearheadForHire, LLC. See [LICENSE](LICENSE) for details.
+Copyright (c) 2010-2017 GearheadForHire, LLC. See [LICENSE](LICENSE) for details.
